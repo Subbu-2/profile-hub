@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  go-api:
+    image: sthireveedhi/goapi:latest
+    container_name: go-api
+    ports:
+      - "8085:8085"
+
+  ui:
+    image: sthireveedhi/profile-hub-ui:latest
+    container_name: profile-hub-ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - go-api
