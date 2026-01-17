@@ -18,11 +18,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and push UI image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: |
-            sthireveedhi/profile-hub-ui:${GITHUB_SHA::7}
-            sthireveedhi/profile-hub-ui:latest
+      - name: build docker image
+        run: docker build -t sthireveedhi/profile-hub-ui:${GITHUB_SHA::7} -t sthireveedhi/profile-hub-ui:latest .
+      - name: push image to docker
+        run: |
+          docker push sthireveedhi/profile-hub-ui:${GITHUB_SHA::7}
+          docker push sthireveedhi/profile-hub-ui:latest
