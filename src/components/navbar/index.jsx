@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./index.scss";
 import { getUser, logout } from "../../api/client";
@@ -8,8 +8,25 @@ const Navbar = () => {
   const isAuthPage =
     location.pathname.startsWith("/login") ||
     location.pathname.startsWith("/signup");
-  const user = getUser();
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+     try {
+      setUser(getUser());
+    } catch (e) {
+      setUser(null);
+    }
+  }, [location.pathname]);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } finally {
+      setUser(null);
+      navigate("/login");
+    }
+  };
 
   return (
     <header className="ph-nav">
@@ -33,11 +50,7 @@ const Navbar = () => {
             <div className="ph-nav__userBlock">
               <span className="ph-nav__user">@{user.username}</span>
               <button
-                className="button button-danger"
-                onClick={() => {
-                  logout();
-                  navigate("/", { replace: true });
-                }}
+                className="button button-danger" onClick={() => {handleLogout}}
               >
                 Logout
               </button>

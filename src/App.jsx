@@ -4,6 +4,8 @@ import Welcome from "./components/welcome";
 import Intro from "./components/intro";
 import Navbar from './components/navbar';
 import Signup from './components/signup';
+import ProtectedRoute from "./components/routes/protected";
+import PublicRoute from "./components/routes/public";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -26,12 +28,12 @@ const App = () => {
     <Navbar />
       <div className='main-container'>
       <Routes>
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/signup' element={<Signup />} />
+      <Route path='/login' element={ <PublicRoute><LoginPage /></PublicRoute>} />
+      <Route path='/signup' element={ <PublicRoute><Signup /></PublicRoute>} />
       {/* <Route path='/logout' element={<Logout />} />
       <Route path='/forgot-password' element={<ForgotPwd />} />
       <Route path='/update-profile' element={<UpdateProfile />} /> */}
-      <Route exact path='/welcome' element={<WelcomePage  />} />
+      <Route exact path='/welcome' element={<ProtectedRoute><WelcomePage /></ProtectedRoute>} />
       <Route exact path='/' element={<IntroPage />} />
       </Routes>
     </div>
