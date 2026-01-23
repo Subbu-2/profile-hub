@@ -1,0 +1,117 @@
+/* src/styles/global.scss */
+
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --border: #dddddd;
+  --primary: #4f46e5;
+  --danger: #dc2626;
+  --success: #16a34a;
+
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Form baseline (reusable across pages) */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.label {
+  font-weight: 500;
+}
+
+
+.input {
+  width: 100%;
+  padding: 14px 14px;;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 14px;
+
+  background: #ffffff;
+  color: var(--text); /* <-- IMPORTANT */
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  border-color: rgba(79, 70, 229, 0.55);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.button {
+  width: 100%;
+  padding: 14px 14px; /* taller */
+  border-radius: 10px;
+  border: 0;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background: #111111;
+}
+
+.button-danger {
+  background: var(--danger);
+}
+
+.helper {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.success {
+  color: var(--success);
+  font-size: 13px;
+}

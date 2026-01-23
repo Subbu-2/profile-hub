@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { login, authCheck } from "../../api/auth";
+import Card from "../ui/card";
 
 const Login = ({ onSuccess }) => {
   const [username, setUsername] = useState("demo");
@@ -14,8 +15,8 @@ const Login = ({ onSuccess }) => {
 
     try {
       await login(username, password);
-      await authCheck(); // prove token works
-      onSuccess();       // tell App to navigate
+      await authCheck(); 
+      onSuccess();       
     } catch (err) {
       setError(err.message || "Login failed");
     } finally {
@@ -24,37 +25,35 @@ const Login = ({ onSuccess }) => {
   }
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1>Profile Hub</h1>
-      <h2>Login</h2>
-
-      <form onSubmit={handleSubmit} style={{ maxWidth: 320 }}>
-        <div style={{ marginBottom: 12 }}>
-          <label>Username</label>
+    <Card title="Welcome back" subtitle="Login to continue">
+      <form className="form" onSubmit={handleSubmit}>
+        <div>
+          <label className="label">Username</label>
           <input
+            className="input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            style={{ width: "100%", padding: 8 }}
           />
         </div>
 
-        <div style={{ marginBottom: 12 }}>
-          <label>Password</label>
+        <div>
+          <label className="label">Password</label>
           <input
+            className="input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={{ width: "100%", padding: 8 }}
           />
+          <div className="helper">At least 8 characters</div>
         </div>
 
-        {error && <p style={{ color: "crimson" }}>{error}</p>}
+        {error && <div className="error">{error}</div>}
 
-        <button disabled={loading} type="submit">
-          {loading ? "Logging in..." : "Login"}
+        <button className="button" disabled={loading}>
+          {loading ? "Signing in…" : "Login"}
         </button>
       </form>
-    </div>
+    </Card>
   );
 };
 

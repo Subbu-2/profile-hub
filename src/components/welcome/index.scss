@@ -1,0 +1,28 @@
+.helper {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.helper-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.helper-list li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.helper-list li::before {
+  content: "•";
+  color: #6b6bff;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+
+.helper--muted {
+  color: #777;
+}
