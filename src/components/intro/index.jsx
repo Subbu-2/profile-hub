@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { checkHealth } from "../../api/health";
 import { logout } from "../../api/client";
 import Card from "../ui/card";
