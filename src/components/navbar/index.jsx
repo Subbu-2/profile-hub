@@ -24,7 +24,7 @@ const Navbar = () => {
       await logout();
     } finally {
       setUser(null);
-      navigate("/login");
+      navigate("/login", { replace: true });
     }
   };
 
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className="ph-nav__userBlock">
               <span className="ph-nav__user">@{user.username}</span>
               <button
-                className="button button-danger" onClick={() => {handleLogout}}
+                className="button button-danger" onClick={handleLogout}
               >
                 Logout
               </button>

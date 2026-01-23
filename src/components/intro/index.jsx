@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { checkHealth } from "../../api/health";
+import { logout } from "../../api/client";
 import Card from "../ui/card";
 import "./index.scss";
 
@@ -21,6 +22,11 @@ const Intro = ({ onLogin }) => {
   }
 
   useEffect(() => {
+    try {
+      logout();
+    } catch (e) {
+      // ignore
+    }
     runHealthCheck();
   }, []);
 
