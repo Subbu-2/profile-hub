@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { authCheck } from "../../api/auth";
-import { clearToken } from "../../api/client";
+import { logout } from "../../api/client";
 import { useNavigate } from "react-router-dom";
 import Card from "../ui/card";
 import "./index.scss"
@@ -15,7 +15,7 @@ const Welcome = ({ onLogout }) => {
         await authCheck();
         setStatus("ok");
       } catch (e) {
-        clearToken();
+        logout();
         navigate("/login", { replace: true });
       }
     }
@@ -49,7 +49,7 @@ const Welcome = ({ onLogout }) => {
       <button
         className="button button-danger"
         onClick={() => {
-          clearToken();
+          logout();
           onLogout();
         }}
       >

@@ -37,3 +37,8 @@ export function getUser() {
 export function clearUser() {
   localStorage.removeItem("user");
 }
+
+export function logout() {
+  clearToken();
+  clearUser();
+}

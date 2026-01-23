@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./index.scss";
-import { getUser, clearUser, clearToken } from "../../api/client";
+import { getUser, logout } from "../../api/client";
 
 const Navbar = () => {
   const location = useLocation();
@@ -35,8 +35,7 @@ const Navbar = () => {
               <button
                 className="button button-danger"
                 onClick={() => {
-                  clearToken();
-                  clearUser();
+                  logout();
                   navigate("/", { replace: true });
                 }}
               >
