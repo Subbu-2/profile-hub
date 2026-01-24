@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { authCheck } from "../../api/auth";
-import { clearToken } from "../../api/client";
+import { logout } from "../../api/client";
 import { useNavigate } from "react-router-dom";
+import Card from "../ui/card";
+import "./index.scss"
 
 const Welcome = ({ onLogout }) => {
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const Welcome = ({ onLogout }) => {
         await authCheck();
         setStatus("ok");
       } catch (e) {
-        clearToken();
+        logout();
         navigate("/login", { replace: true });
       }
     }
@@ -25,19 +27,36 @@ const Welcome = ({ onLogout }) => {
     return <p>Verifying session…</p>;
   }
   return (
-    <div style={{ padding: 24 }}>
-      <h1>✅ Welcome!</h1>
-      <p>You are logged in and JWT authcheck succeeded.</p>
 
+    <Card title="Welcome to Profile Hub 👋" subtitle="Your account is ready.">
+      <p className="helper">
+  The profile experience is currently under development.
+</p>
+
+<p className="helper">
+  You’ll soon be able to:
+</p>
+
+<ul className="helper-list">
+  <li>Build your public profile</li>
+  <li>Share it via a clean URL</li>
+  <li>Control visibility and updates</li>
+</ul>
+
+<p className="helper helper--muted">
+  Thanks for being early 🙌
+</p>
       <button
+        className="button button-danger"
         onClick={() => {
-          clearToken();
+          logout();
           onLogout();
         }}
       >
         Logout
       </button>
-    </div>
+    </Card>
+
   );
 };
 

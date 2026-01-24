@@ -23,3 +23,22 @@ export async function apiFetch(path, options = {}) {
     },
   });
 }
+
+export function setUser(user) {
+  if (!user) return;
+  localStorage.setItem("user", JSON.stringify(user));
+}
+
+export function getUser() {
+  const raw = localStorage.getItem("user");
+  return raw ? JSON.parse(raw) : null;
+}
+
+export function clearUser() {
+  localStorage.removeItem("user");
+}
+
+export function logout() {
+  clearToken();
+  clearUser();
+}
