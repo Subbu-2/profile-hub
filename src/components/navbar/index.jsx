@@ -24,7 +24,7 @@ const Navbar = () => {
       await logout();
     } finally {
       setUser(null);
-      navigate("/login", { replace: true });
+      navigate("/logout", { replace: true });
     }
   };
 

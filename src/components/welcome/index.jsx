@@ -16,7 +16,7 @@ const Welcome = ({ onLogout }) => {
         setStatus("ok");
       } catch (e) {
         logout();
-        navigate("/login", { replace: true });
+        navigate("/logout", { replace: true });
       }
     }
 
