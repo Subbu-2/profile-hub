@@ -22,3 +22,14 @@
 .ph-card__body {
   display: block;
 }
+
+@media (max-width: 640px) {
+  .ph-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .ph-card__title {
+    font-size: 20px;
+  }
+}
