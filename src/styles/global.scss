@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -25,15 +30,34 @@ body {
   color: var(--text);
 }
 
-.main-container {
+.ph-app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.ph-center {
+  width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
 }
 
-/* Form baseline (reusable across pages) */
+.ph-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -46,24 +70,18 @@ body {
   color: var(--muted);
   margin-bottom: 6px;
   text-align: left;
-}
-
-.label {
   font-weight: 500;
 }
 
-
 .input {
   width: 100%;
-  padding: 14px 14px;;
+  padding: 14px;
   border-radius: 10px;
   border: 1px solid var(--border);
   outline: none;
   font-size: 14px;
-
   background: #ffffff;
-  color: var(--text); /* <-- IMPORTANT */
-
+  color: var(--text);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -78,7 +96,7 @@ body {
 
 .button {
   width: 100%;
-  padding: 14px 14px; /* taller */
+  padding: 14px;
   border-radius: 10px;
   border: 0;
   background: var(--primary);
@@ -114,4 +132,28 @@ body {
 .success {
   color: var(--success);
   font-size: 13px;
+}
+
+.ph-link {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--text);
+  }
+}
+
+@media (max-width: 640px) {
+  .ph-center,
+  .ph-page {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .ph-center {
+    align-items: flex-start;
+    padding-top: 24px;
+  }
 }
