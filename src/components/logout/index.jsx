@@ -7,7 +7,6 @@ const Logout = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="main-container">
       <Card title="You’re logged out" subtitle="Your session has ended safely.">
         <div className="logout">
           <p className="helper">
@@ -31,7 +30,6 @@ const Logout = () => {
           </div>
         </div>
       </Card>
-    </div>
   );
 };
 
