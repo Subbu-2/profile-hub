@@ -1,0 +1,17 @@
+.logout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logout__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
