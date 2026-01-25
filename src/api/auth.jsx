@@ -7,12 +7,27 @@ export async function login(username, password) {
     body: JSON.stringify({ username, password }),
   });
 
-  if (!res.ok) {
-    throw new Error(`Login failed (HTTP ${res.status})`);
+  let data = null;
+  try {
+    data = await res.json();
+  } catch (_) {
+    log.error("Failed to parse login response as JSON" + res.text());
   }
 
-  const data = await res.json();
-  if (!data.token) throw new Error("Token missing in response");
+  if (!res.ok) {
+    const serverMsg = data?.error ? String(data.error) : "";
+
+    if (res.status === 400) {
+      throw new Error(serverMsg || "Username and password are required");
+    }
+    if (res.status === 401) {
+      throw new Error(serverMsg || "Invalid username or password");
+    }
+    throw new Error(serverMsg || "Something went wrong. Please try again.");
+  }
+
+  if (!data?.token) throw new Error("Token missing in response");
+
   setToken(data.token);
   setUser({ username: data.username, userId: data.userId });
   return data;
