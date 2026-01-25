@@ -1,0 +1,30 @@
+.ph-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.ph-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ph-footer__copy {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ph-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ph-footer__sep {
+  color: var(--muted);
+}

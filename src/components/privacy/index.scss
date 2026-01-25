@@ -1,0 +1,17 @@
+.ph-legal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.ph-legal__title {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.ph-legal__text {
+  margin: 0;
+  color: var(--muted);
+}
