@@ -1,0 +1,83 @@
+.ph-expModal__error {
+  color: var(--danger);
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.ph-expModal__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-expModal__row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ph-expModal__field {
+  display: grid;
+  gap: 6px;
+}
+
+.ph-expModal__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-expModal__input,
+.ph-expModal__textarea {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.ph-expModal__input:focus,
+.ph-expModal__textarea:focus {
+  border-color: var(--primary);
+}
+
+.ph-expModal__errText {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.ph-expModal__checkRow {
+  display: flex;
+  align-items: center;
+}
+
+.ph-expModal__check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.ph-expModal__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-expModal__btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ph-expModal__btn--primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.ph-expModal__btn--ghost {
+  background: #fff;
+  border-color: var(--border);
+}

@@ -1,0 +1,31 @@
+.ph-sectionCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.ph-sectionCard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ph-sectionCard__title {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.ph-sectionCard__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ph-sectionCard__body {
+  margin-top: 4px;
+}
