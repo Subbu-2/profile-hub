@@ -1,0 +1,29 @@
+.ph-confirm__message {
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.ph-confirm__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-confirm__btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ph-confirm__btn--primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.ph-confirm__btn--danger {
+  background: var(--danger);
+  color: #fff;
+  border-color: transparent;
+}

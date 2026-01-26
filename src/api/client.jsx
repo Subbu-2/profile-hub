@@ -15,13 +15,18 @@ export function clearToken() {
 export async function apiFetch(path, options = {}) {
   const token = getToken();
 
-  return fetch(path, {
+  const res =  fetch(path, {
     ...options,
     headers: {
       ...(options.headers || {}),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
   });
+  if (res.status === 401) {
+    logout();
+    window.location.href = "/logout";
+  }
+  return res;
 }
 
 export function setUser(user) {

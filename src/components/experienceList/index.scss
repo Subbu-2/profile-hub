@@ -1,0 +1,73 @@
+.ph-expList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ph-expList__item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+
+.ph-expList__topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ph-expList__title {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ph-expList__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ph-expList__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.ph-expList__btn:hover {
+  transform: translateY(-1px);
+}
+
+.ph-expList__btn--danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.ph-expList__meta {
+  margin-top: 6px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ph-expList__dot {
+  opacity: 0.7;
+}
+
+.ph-expList__dates {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.ph-expList__desc {
+  margin: 8px 0 0 0;
+  color: var(--text);
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
