@@ -8,6 +8,7 @@ import Logout from "./components/logout";
 import Footer from "./components/footer";
 import Terms from "./components/terms";
 import Privacy from "./components/privacy";
+import ProfileEditPage from "./components/profileEdit";
 import ProtectedRoute from "./components/routes/protected";
 import PublicRoute from "./components/routes/public";
 
@@ -38,7 +39,7 @@ const App = () => {
               <Route path="/login" element={<PublicRoute><div className="ph-center"><LoginPage /></div></PublicRoute>} />
               <Route path="/signup" element={<PublicRoute><div className="ph-center"><Signup /></div></PublicRoute>} />
               <Route path="/logout" element={<PublicRoute><div className="ph-center"><Logout /></div></PublicRoute>} />
-
+              <Route path="/app/profile" element={<ProtectedRoute><div className="ph-page"><ProfileEditPage /></div></ProtectedRoute>} />
               <Route path="/welcome" element={<ProtectedRoute><div className="ph-center"><WelcomePage /></div></ProtectedRoute>} />
               <Route path="/" element={<div className="ph-page"><IntroPage /></div>} />
               <Route path="/terms" element={<div className="ph-center"><Terms /></div>} />
