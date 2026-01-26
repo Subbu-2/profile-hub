@@ -28,6 +28,8 @@ export default function ProfileEditPage() {
   const [delBusy, setDelBusy] = useState(false);
   const [delTarget, setDelTarget] = useState(null);
 
+  const [expResetSignal, setExpResetSignal] = useState(0);
+
   async function refreshExperiences() {
     setErrMsg("");
     try {
@@ -96,6 +98,7 @@ export default function ProfileEditPage() {
     try {
       await createExperience(payload);
       await refreshExperiences();
+      setExpResetSignal((n) => n + 1);
       // keep modal open; ExperienceModal resets form automatically on open,
       // so we just keep it open and let it clear after success by forcing add mode state
       setExpSelected(null);
@@ -193,6 +196,7 @@ export default function ProfileEditPage() {
         onClose={closeExpModal}
         onSave={handleSave}
         onSaveAndAddAnother={handleSaveAndAddAnother}
+        resetSignal={expResetSignal}
       />
 
       <ConfirmModal

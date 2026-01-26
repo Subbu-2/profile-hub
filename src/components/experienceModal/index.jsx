@@ -29,6 +29,7 @@ export default function ExperienceModal({
   onClose,
   onSave,
   onSaveAndAddAnother,
+  resetSignal,
 }) {
   const [form, setForm] = useState(emptyForm);
   const [touched, setTouched] = useState({});
@@ -53,6 +54,14 @@ export default function ExperienceModal({
     }
     setTouched({});
   }, [isOpen, mode, initialValue]);
+
+  useEffect(() => {
+  if (!isOpen) return;
+  if (mode !== "add") return;
+
+  setForm(emptyForm);
+  setTouched({});
+}, [resetSignal, isOpen, mode]);
 
   const errors = useMemo(() => validate(form), [form]);
   const canSubmit = Object.keys(errors).length === 0 && !isBusy;
