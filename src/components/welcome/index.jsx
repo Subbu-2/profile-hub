@@ -34,11 +34,19 @@ const Welcome = ({ onLogout }) => {
 </p>
 
 <p className="helper">
+  You’ll currently be able to:
+</p>
+
+<ul className="helper-list">
+  <li>Build your public profile with Experience and Education</li>
+</ul>
+
+<p className="helper">
   You’ll soon be able to:
 </p>
 
 <ul className="helper-list">
-  <li>Build your public profile</li>
+  <li>Add certs and Rewards to your public profile </li>
   <li>Share it via a clean URL</li>
   <li>Control visibility and updates</li>
 </ul>
@@ -47,13 +55,14 @@ const Welcome = ({ onLogout }) => {
   Thanks for being early 🙌
 </p>
       <button
-        className="button button-danger"
+        className="button button-primary"
         onClick={() => {
-          logout();
-          onLogout();
+          // logout();
+          // onLogout();
+          navigate("/app/profile")
         }}
       >
-        Logout
+        Go to Your Profile
       </button>
     </Card>
 
