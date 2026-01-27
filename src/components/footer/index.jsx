@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import "./index.scss";
 
 const Footer = () => {
+  const version = import.meta.env.VITE_APP_VERSION || "dev";
   return (
     <footer className="ph-footer">
       <div className="ph-footer__inner">
         <span className="ph-footer__copy">
-          © {new Date().getFullYear()} Profile Hub
+          © {new Date().getFullYear()} Profile Hub{" "}
+          <span className="ph-footer__version">v:{version}</span>
         </span>
 
         <nav className="ph-footer__links" aria-label="Legal">
