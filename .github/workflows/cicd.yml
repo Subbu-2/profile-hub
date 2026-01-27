@@ -17,6 +17,7 @@ jobs:
         id: tags
         run: |
           SHORT_SHA=${GITHUB_SHA:0:7}
+          echo "SHORT_SHA=${SHORT_SHA}" >> $GITHUB_OUTPUT
           if [ "${GITHUB_REF_NAME}" = "main" ]; then
             echo "TAG1=prod-${SHORT_SHA}" >> $GITHUB_OUTPUT
             echo "TAG2=latest" >> $GITHUB_OUTPUT
@@ -30,7 +31,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: build docker image
-        run: docker build -t sthireveedhi/profile-hub-ui:${{ steps.tags.outputs.TAG1 }} -t sthireveedhi/profile-hub-ui:${{ steps.tags.outputs.TAG2 }} .
+        run: docker build --build-arg VITE_APP_VERSION=${{ steps.tags.outputs.SHORT_SHA }} -t sthireveedhi/profile-hub-ui:${{ steps.tags.outputs.TAG1 }} -t sthireveedhi/profile-hub-ui:${{ steps.tags.outputs.TAG2 }} .
       - name: push image to docker
         run: |
           docker push sthireveedhi/profile-hub-ui:${{ steps.tags.outputs.TAG1 }}

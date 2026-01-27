@@ -18,6 +18,9 @@
   box-shadow: var(--shadow);
   overflow: hidden;
   transform: translateY(0);
+    max-height: calc(100vh - 36px);
+  display: flex;
+  flex-direction: column;
 }
 
 .ph-modal__header {
