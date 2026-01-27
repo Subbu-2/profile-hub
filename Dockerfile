@@ -1,6 +1,9 @@
 # ---------- Build stage ----------
 FROM node:20-alpine AS builder
 WORKDIR /app
+# Set app version
+ARG VITE_APP_VERSION=dev
+ENV VITE_APP_VERSION=$VITE_APP_VERSION
 # Install deps first
 COPY package*.json ./
 RUN npm ci
