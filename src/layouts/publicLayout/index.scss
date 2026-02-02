@@ -1,0 +1,135 @@
+/* PublicLayout should use public tokens.
+   Provide fallbacks so it never breaks if tokens aren't present. */
+
+.ph-publicLayout {
+  /* token bridge (public token -> fallback root token) */
+  --ph-bg: var(--ph-bg, var(--bg));
+  --ph-card: var(--ph-card, var(--card));
+  --ph-text: var(--ph-text, var(--text));
+  --ph-muted: var(--ph-muted, var(--muted));
+  --ph-border: var(--ph-border, var(--border));
+  --ph-accent: var(--ph-accent, var(--primary));
+  --ph-shadow: var(--ph-shadow, var(--shadow));
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 64px 1fr 56px;
+
+  /* ✅ layout canvas */
+  background: var(--ph-bg);
+}
+
+/* Header */
+.ph-publicLayout__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: var(--ph-card);
+  border-bottom: 1px solid var(--ph-border);
+  /* optional: a little depth */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.ph-publicLayout__headerInner {
+  height: 64px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ph-publicLayout__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: var(--ph-text);
+  font-weight: 800;
+}
+
+.ph-publicLayout__logoDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ph-accent);
+  display: inline-block;
+}
+
+.ph-publicLayout__brandText {
+  font-size: 16px;
+}
+
+.ph-publicLayout__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ph-publicLayout__link {
+  text-decoration: none;
+  color: var(--ph-text);
+  font-weight: 700;
+}
+
+.ph-publicLayout__cta {
+  text-decoration: none;
+  font-weight: 800;
+  color: #fff;
+  background: var(--ph-accent);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* Main (scroll area) */
+.ph-publicLayout__main {
+  overflow: auto;
+  background: var(--ph-bg); /* ✅ important: paints the visible scroll area */
+}
+
+/* Footer */
+.ph-publicLayout__footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+
+  background: var(--ph-card);
+  border-top: 1px solid var(--ph-border);
+}
+
+.ph-publicLayout__footerInner {
+  height: 56px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ph-publicLayout__muted {
+  color: var(--ph-muted);
+  font-size: 13px;
+}
+
+.ph-publicLayout {
+  --ph-surface: #fff; /* solid surface for chrome (header/footer) */
+}
+
+.ph-themeHost .ph-publicLayout__header,
+.ph-themeHost .ph-publicLayout__footer {
+  background: var(--ph-surface);
+}
+
+.ph-themeHost .ph-publicLayout {
+  background: var(--ph-bg);
+}
+
+.ph-themeHost .ph-publicLayout__main {
+  background: var(--ph-bg);
+}

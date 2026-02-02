@@ -1,0 +1,80 @@
+.ph-projList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ph-projList__item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.ph-projList__main {
+  padding: 14px;
+}
+
+.ph-projList__topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ph-projList__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ph-projList__summary {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ph-projList__meta {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ph-projList__pill {
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--muted);
+}
+
+.ph-projList__metaText {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.ph-projList__links {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.ph-projList__link {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ph-projList__link:hover {
+  text-decoration: underline;
+}
+
+.ph-projList__desc {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}

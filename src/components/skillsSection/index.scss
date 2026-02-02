@@ -1,0 +1,14 @@
+.ph-skills__hint {
+  margin: 0 0 10px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ph-skills__textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  resize: vertical;
+}

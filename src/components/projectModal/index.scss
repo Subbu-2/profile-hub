@@ -1,0 +1,76 @@
+.ph-projModal__error {
+  margin-bottom: 12px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.ph-projModal__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-projModal__grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .ph-projModal__grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ph-projModal__field {
+  display: grid;
+  gap: 6px;
+}
+
+.ph-projModal__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-projModal__input,
+.ph-projModal__textarea {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.ph-projModal__textarea {
+  resize: vertical;
+}
+
+.ph-projModal__errText {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.ph-projModal__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-projModal__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ph-projModal__btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.ph-projModal__footerRight {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}

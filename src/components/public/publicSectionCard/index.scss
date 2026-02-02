@@ -1,0 +1,24 @@
+.ph-publicCard {
+  background: var(--ph-card);
+  border: 1px solid var(--ph-border);
+  border-radius: var(--ph-radius);
+  box-shadow: var(--ph-shadow);
+  padding: var(--ph-card-pad);
+}
+
+.ph-publicCard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ph-publicCard__title {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ph-text);
+}
+
+.ph-publicCard__body {
+  color: var(--ph-text);
+}

@@ -1,0 +1,78 @@
+.ph-proj {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-proj__item {
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+}
+
+.ph-proj__title {
+  font-weight: 700;
+  color: var(--ph-text);
+}
+
+.ph-proj__summary {
+  margin-top: 6px;
+  color: var(--ph-muted);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.ph-proj__desc {
+  margin-top: 8px;
+  color: var(--ph-text);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.ph-proj__links {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.ph-proj__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--ph-border);
+  color: var(--ph-text);
+  text-decoration: none;
+}
+
+.ph-proj__link:hover {
+  border-color: var(--ph-accent);
+}
+
+.ph-proj__linkLabel {
+  font-weight: 600;
+}
+
+.ph-proj__linkHint {
+  color: var(--ph-muted);
+  font-size: 12px;
+  word-break: break-word;
+  text-align: right;
+}
+
+.ph-proj__tech {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ph-proj__pill {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ph-border);
+  font-size: 13px;
+  color: var(--ph-text);
+}

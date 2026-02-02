@@ -1,0 +1,82 @@
+.ph-profileEdit {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.ph-profileEdit__right_sidebar {
+  flex: 1;
+  padding-top: 90px;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.ph-profileEdit__main {
+  flex: 2;
+  min-width: 0; // prevents flex overflow issues
+}
+
+.ph-profileEdit__right_sidebar {
+  padding-top: 90px;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.ph-profileEdit__header {
+  margin-bottom: 18px;
+}
+
+.ph-profileEdit__title {
+  margin: 0;
+  color: var(--text);
+}
+
+.ph-profileEdit__subtitle {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+}
+
+.ph-profileEdit__content {
+  display: grid;
+  gap: 16px;
+}
+
+.ph-profileEdit__primaryBtn {
+  background: var(--primary);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-profileEdit__primaryBtn:hover {
+  transform: translateY(-1px);
+}
+
+.ph-profileEdit__muted {
+  color: var(--muted);
+}
+
+.ph-profileEdit__error {
+  color: var(--danger);
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.ph-profileEdit__empty {
+  display: grid;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.ph-profileEdit__emptyTitle {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ph-profileEdit__emptyText {
+  color: var(--muted);
+}

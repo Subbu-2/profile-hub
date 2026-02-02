@@ -1,0 +1,62 @@
+.ph-basicPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ph-basicPanel__sectionTitle {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.ph-basicPanel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ph-basicPanel__grid--single {
+  grid-template-columns: 1fr;
+}
+
+.ph-basicPanel__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ph-basicPanel__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-basicPanel__input,
+.ph-basicPanel__textarea {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+
+.ph-basicPanel__textarea {
+  resize: vertical;
+}
+
+.ph-basicPanel__input:focus,
+.ph-basicPanel__textarea:focus {
+  border-color: var(--primary);
+}
+
+.ph-basicPanel__errText {
+  font-size: 12px;
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .ph-basicPanel__grid {
+    grid-template-columns: 1fr;
+  }
+}

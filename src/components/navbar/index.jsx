@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <header className="ph-nav">
       <div className="ph-nav__inner">
-        <Link to="/" className="ph-nav__brand">
+        <Link to={ user ? "/welcome" : "/" } className="ph-nav__brand">
           <span className="ph-nav__logoDot" />
           <span className="ph-nav__brandText">Profile Hub</span>
         </Link>
@@ -48,7 +48,9 @@ const Navbar = () => {
             </>
           ) : user ? (
             <div className="ph-nav__userBlock">
-              <span className="ph-nav__user">@{user.username}</span>
+              <Link className="ph-nav__link" to="/profile/settings">
+                <span className="ph-nav__user">{user.username}</span>
+              </Link>
               <button
                 className="button button-danger" onClick={handleLogout}
               >

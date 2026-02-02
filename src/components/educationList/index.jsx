@@ -12,12 +12,12 @@ function formatYearRange(startYear, endYear, isCurrent) {
   return `${start} - ${end}`;
 }
 
-export default function EducationList({ items, onEdit, onDelete }) {
+export default function EducationList({ items, onEdit, onDelete, onMoveUp, onMoveDown }) {
   if (!items || items.length === 0) return null;
 
   return (
     <ul className="ph-eduList">
-      {items.map((it) => (
+      {items.map((it, idx) => (
         <li key={it.educationId} className="ph-eduList__item">
           <div className="ph-eduList__main">
             {/* Top row */}
@@ -25,6 +25,24 @@ export default function EducationList({ items, onEdit, onDelete }) {
               <div className="ph-eduList__title">{it.school}</div>
 
               <div className="ph-eduList__actions">
+                <button
+                  type="button"
+                  className="ph-expList__btn"
+                  onClick={() => onMoveUp?.(it)}
+                  disabled={idx === 0}
+                  title="Move up"
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  className="ph-expList__btn"
+                  onClick={() => onMoveDown?.(it)}
+                  disabled={idx === items.length - 1}
+                  title="Move down"
+                >
+                  ↓
+                </button>
                 <button
                   type="button"
                   className="ph-eduList__btn"

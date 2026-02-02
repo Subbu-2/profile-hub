@@ -1,0 +1,98 @@
+/* Public theme token system */
+
+// .ph-publicTheme {
+//   /* map to global tokens */
+//   // --ph-bg: var(--bg);
+//   --ph-bg: radial-gradient(1200px 600px at 20% 0%, rgba(79,70,229,0.10), transparent 60%),
+//            radial-gradient(900px 500px at 90% 10%, rgba(16,185,129,0.08), transparent 55%),
+//            #fbfbfd;
+//   --ph-card: rgba(255,255,255,0.78);
+//   --ph-shadow: 0 16px 40px rgba(0,0,0,0.10);
+//   // --ph-card: rgba(255,255,255,0.88);
+//   --ph-border: rgba(17,17,17,0.08);
+//   // --ph-shadow: 0 12px 30px rgba(0,0,0,0.08);
+//   // --ph-card: var(--card);
+//   --ph-text: var(--text);
+//   --ph-muted: var(--muted);
+//   // --ph-border: var(--border);
+
+//   --ph-accent: var(--primary);   /* default blue/violet */
+//   --ph-accent-2: #7c3aed;        /* ok to keep */
+//   --ph-ring: rgba(79, 70, 229, 0.25);
+
+//   --ph-radius: 14px;
+//   // --ph-shadow: var(--shadow);
+
+//   --ph-section-gap: 16px;
+//   --ph-card-pad: 16px;
+// }
+
+.ph-publicTheme {
+  /* Canvas */
+  --ph-bg:
+    radial-gradient(1200px 600px at 20% 0%, rgba(79, 70, 229, 0.10), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(16, 185, 129, 0.08), transparent 55%),
+    #fbfbfd;
+
+  /* ✅ Solid surfaces (header/footer/modal panel) */
+  --ph-card: #ffffff;
+
+  /* ✅ “Premium” glass cards (content only) */
+  --ph-card-glass: rgba(255, 255, 255, 0.84);
+
+  --ph-border: rgba(17, 17, 17, 0.08);
+  --ph-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+
+  --ph-text: var(--text);
+  --ph-muted: var(--muted);
+  --ph-accent: var(--primary);
+}
+
+.ph-publicTheme .ph-card {
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+}
+
+/* THEME PACKS */
+.ph-publicTheme[data-theme="singlepage"] {
+  --ph-radius: 14px;
+  --ph-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --ph-section-gap: 18px;
+  --ph-card-pad: 18px;
+}
+
+.ph-publicTheme[data-theme="modal"] {
+  --ph-radius: 16px;
+  --ph-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --ph-section-gap: 14px;
+  --ph-card-pad: 16px;
+}
+
+/* ACCENT OVERRIDES */
+.ph-publicTheme[data-accent="default"] {
+  --ph-accent: var(--primary);
+  --ph-accent-2: #7c3aed;
+  --ph-ring: rgba(79, 70, 229, 0.25);
+}
+
+.ph-publicTheme[data-accent="pink"] {
+  --ph-accent: #db2777;
+  --ph-accent-2: #a855f7;
+  --ph-ring: rgba(219, 39, 119, 0.25);
+}
+
+/* Utility */
+.ph-public {
+  background: var(--ph-bg);
+  color: var(--ph-text);
+  min-height: 100vh;
+}
+
+.ph-public a {
+  color: var(--ph-accent);
+  text-decoration: none;
+}
+
+.ph-public a:hover {
+  text-decoration: underline;
+}

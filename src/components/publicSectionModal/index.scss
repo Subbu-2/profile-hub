@@ -1,0 +1,74 @@
+.ph-modalOpen {
+  overflow: hidden;
+}
+
+.ph-publicModal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ph-publicModal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+
+.ph-publicModal__panel {
+  position: relative;
+  margin: 0;
+  width: min(920px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  border-radius: 16px;
+  background: var(--ph-card);
+  box-shadow: var(--ph-shadow);
+  border: 1px solid var(--ph-border);
+  display: flex;
+  flex-direction: column;
+  animation: phModalIn 160ms ease-out;
+}
+
+.ph-publicModal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ph-border);
+}
+
+.ph-publicModal__title {
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--ph-text);
+}
+
+.ph-publicModal__close {
+  border: 1px solid var(--ph-border);
+  background: transparent;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--ph-text);
+}
+
+.ph-publicModal__body {
+  padding: 16px;
+  overflow: auto;
+}
+
+@keyframes phModalIn {
+  from {
+    transform: translateY(8px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
