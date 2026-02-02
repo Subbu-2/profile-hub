@@ -1,0 +1,52 @@
+.ph-edu {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-edu__item {
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+}
+
+.ph-edu__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ph-edu__school {
+  font-weight: 700;
+  color: var(--ph-text);
+}
+
+.ph-edu__when {
+  font-size: 13px;
+  color: var(--ph-muted);
+  white-space: nowrap;
+}
+
+.ph-edu__degreeRow {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.ph-edu__degree {
+  font-weight: 600;
+  color: var(--ph-text);
+}
+
+.ph-edu__spec {
+  color: var(--ph-muted);
+}
+
+.ph-edu__gpa {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--ph-muted);
+}

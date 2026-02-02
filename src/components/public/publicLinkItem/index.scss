@@ -1,0 +1,24 @@
+.ph-publicLinkItem {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  background: transparent;
+  text-decoration: none;
+}
+
+.ph-publicLinkItem:hover {
+  border-color: var(--ph-accent);
+}
+
+.ph-publicLinkItem__label {
+  font-size: 13px;
+  color: var(--ph-muted);
+  margin-bottom: 4px;
+}
+
+.ph-publicLinkItem__url {
+  font-size: 14px;
+  color: var(--ph-text);
+  word-break: break-word;
+}

@@ -1,0 +1,54 @@
+.ph-exp {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-exp__item {
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+}
+
+.ph-exp__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ph-exp__title {
+  font-weight: 700;
+  color: var(--ph-text);
+}
+
+.ph-exp__when {
+  font-size: 13px;
+  color: var(--ph-muted);
+  white-space: nowrap;
+}
+
+.ph-exp__mid {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.ph-exp__company {
+  font-weight: 600;
+  color: var(--ph-text);
+}
+
+.ph-exp__loc {
+  color: var(--ph-muted);
+  font-size: 13px;
+}
+
+.ph-exp__desc {
+  margin-top: 8px;
+  color: var(--ph-muted);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}

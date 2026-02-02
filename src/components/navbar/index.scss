@@ -64,9 +64,43 @@
 }
 
 .ph-nav__user {
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 800;
   color: var(--text);
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: color 120ms ease;
+}
+
+.ph-nav__user::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.ph-nav__link:hover .ph-nav__user {
+  color: var(--primary);
+}
+
+.ph-nav__link:hover .ph-nav__user::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.ph-nav__user {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ph-nav__link:hover .ph-nav__user {
+  color: var(--primary);
 }
 
 .ph-nav__userBlock {

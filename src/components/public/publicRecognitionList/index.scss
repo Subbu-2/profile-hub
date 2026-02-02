@@ -1,0 +1,23 @@
+.ph-recList {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-recList__item {
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+}
+
+.ph-recList__company {
+  font-weight: 600;
+  color: var(--ph-text);
+}
+
+.ph-recList__desc {
+  margin-top: 6px;
+  color: var(--ph-muted);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}

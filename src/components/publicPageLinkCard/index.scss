@@ -1,0 +1,18 @@
+.ph-publicLink__url {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  background: #fff;
+  word-break: break-all;
+}
+
+.ph-publicLink__btnRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ph-card {
+  max-width: auto;
+}

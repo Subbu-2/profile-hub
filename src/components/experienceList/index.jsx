@@ -10,17 +10,35 @@ function formatDateRange(startDate, endDate, isCurrent) {
   return `${start} - ${end}`;
 }
 
-export default function ExperienceList({ items, onEdit, onDelete }) {
+export default function ExperienceList({ items, onEdit, onDelete,  onMoveUp, onMoveDown }) {
   if (!items || items.length === 0) return null;
 
   return (
     <ul className="ph-expList">
-      {items.map((it) => (
+      {items.map((it, idx) => (
         <li key={it.experienceId} className="ph-expList__item">
           <div className="ph-expList__main">
             <div className="ph-expList__topRow">
               <div className="ph-expList__title">{it.title}</div>
               <div className="ph-expList__actions">
+                <button
+                  type="button"
+                  className="ph-expList__btn"
+                  onClick={() => onMoveUp?.(it)}
+                  disabled={idx === 0}
+                  title="Move up"
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  className="ph-expList__btn"
+                  onClick={() => onMoveDown?.(it)}
+                  disabled={idx === items.length - 1}
+                  title="Move down"
+                >
+                  ↓
+                </button>
                 <button
                   type="button"
                   className="ph-expList__btn"

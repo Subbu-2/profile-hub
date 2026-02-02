@@ -1,0 +1,65 @@
+.ph-certModal__error {
+  margin-bottom: 12px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.ph-certModal__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-certModal__twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .ph-certModal__twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ph-certModal__field {
+  display: grid;
+  gap: 6px;
+}
+
+.ph-certModal__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-certModal__input {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.ph-certModal__errText {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.ph-certModal__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-certModal__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ph-certModal__btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}

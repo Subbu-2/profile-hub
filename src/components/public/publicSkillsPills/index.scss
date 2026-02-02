@@ -1,0 +1,14 @@
+.ph-skillsPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ph-skillsPills__pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ph-border);
+  background: transparent;
+  font-size: 13px;
+  color: var(--ph-text);
+}

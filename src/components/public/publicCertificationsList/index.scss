@@ -1,0 +1,31 @@
+.ph-cert {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-cert__item {
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+}
+
+.ph-cert__top {
+  display: grid;
+  gap: 4px;
+}
+
+.ph-cert__name {
+  font-weight: 700;
+  color: var(--ph-text);
+}
+
+.ph-cert__issuer {
+  color: var(--ph-muted);
+}
+
+.ph-cert__dates {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--ph-muted);
+}

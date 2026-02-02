@@ -1,0 +1,58 @@
+.ph-recModal__error {
+  margin-bottom: 12px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.ph-recModal__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.ph-recModal__field {
+  display: grid;
+  gap: 6px;
+}
+
+.ph-recModal__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-recModal__input,
+.ph-recModal__textarea {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.ph-recModal__textarea {
+  resize: vertical;
+}
+
+.ph-recModal__errText {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.ph-recModal__btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.ph-recModal__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ph-recModal__btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
