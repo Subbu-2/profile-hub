@@ -18,9 +18,38 @@
 }
 
 .ph-settings__navTitle {
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;      // makes it feel like a header row
   margin-bottom: 12px;
+
+  font-weight: 700;
   color: var(--text);
+
+  border: 1px solid var(--border-muted);
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+}
+
+.ph-settings__navTitle_left {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ph-settings__navTitle_right {
+  display: flex;
+  align-items: center;
+}
+
+/* Back should not look like an input box */
+.ph-settings__back {
+  border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
 }
 
 .ph-settings__navList {

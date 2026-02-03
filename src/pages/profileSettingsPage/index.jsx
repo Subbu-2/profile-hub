@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import "./index.scss";
 
 import BasicProfilePanel, {
@@ -131,12 +131,20 @@ export default function ProfileSettingsPage() {
   }
 
   const activeMeta = TABS.find((t) => t.key === activeTab);
+  const navigate = useNavigate();
 
   return (
     <div className="ph-page">
       <div className="ph-settings">
         <aside className="ph-settings__nav">
-          <div className="ph-settings__navTitle">Settings</div>
+          <div className="ph-settings__navTitle">
+            <div className="ph-settings__navTitle_left">Settings</div>
+            <div className="ph-settings__navTitle_right">
+              <button className="ph-settings__back" onClick={() => { navigate("/profile/edit") }} type="button">
+                back
+              </button>
+            </div>
+          </div>
 
           <div className="ph-settings__navList">
             {TABS.map((t) => {
