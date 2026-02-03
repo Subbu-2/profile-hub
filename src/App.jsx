@@ -15,6 +15,7 @@ import PublicRoute from "./routes/public";
 import AppLayout from "./layouts/appLayout";
 import PublicLayout from "./layouts/publicLayout";
 import ProfileSettingsPage from "./pages/profileSettingsPage";
+import NotFoundPage from "./pages/notFoundPage";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -47,8 +48,9 @@ const App = () => {
           <Route path="/profile/settings" element={<ProtectedRoute><ProfileSettingsPage /></ProtectedRoute>} />
         </Route>
         <Route element={<PublicLayout />}>
-          <Route path="/profile/:username" element={<div className="ph-page"><PublicProfilePage /></div>} />
+          <Route path="/public/:username" element={<div className="ph-page"><PublicProfilePage /></div>} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

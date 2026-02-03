@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { checkHealth } from "../../api/health";
 import { logout } from "../../api/client";
 import Card from "../../components/card";
@@ -7,6 +8,7 @@ import "./index.scss";
 const Intro = ({ onLogin }) => {
   const [status, setStatus] = useState("checking"); // checking | up | down
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   async function runHealthCheck() {
     setStatus("checking");
@@ -79,7 +81,7 @@ const Intro = ({ onLogin }) => {
               </button>
             )}
 
-            <button className="button button--ghost" type="button">
+            <button className="button button--ghost" onClick={() => { navigate("/public/profilehub") }} type="button">
               View example
             </button>
           </div>
