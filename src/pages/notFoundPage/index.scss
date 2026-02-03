@@ -1,0 +1,23 @@
+.ph-notFound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 96px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  &__actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+  }
+}

@@ -10,7 +10,7 @@ export default function PublicPageLinkCard() {
   const publicUrl = useMemo(() => {
     if (!username) return "";
     // adjust path if your public page route differs
-    return `${window.location.origin}/profile/${username}`;
+    return `${window.location.origin}/public/${username}`;
   }, [username]);
 
   const [copied, setCopied] = useState(false);

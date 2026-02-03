@@ -89,7 +89,8 @@ export default function PublicProfilePage() {
         const data = await fetchPublicProfile(username);
         if (isMounted) setProfile(data);
       } catch (e) {
-        if (isMounted) setError(e?.message || "FETCH_FAILED");
+        if (isMounted)
+        e?.message === "Profile not found (HTTP 404)" ? setError("NOT_FOUND") : setError(e?.message || "FETCH_FAILED");
       } finally {
         if (isMounted) setLoading(false);
       }
