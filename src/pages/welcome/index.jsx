@@ -37,16 +37,26 @@ const Welcome = ({ onLogout }) => {
 
       <ul className="helper-list">
         <li>Build your public profile</li>
+        <li>View Your Public Profile </li>
+        <li>Update your bio and details by clicking on {user.username} on top right</li>
       </ul>
 
       <p className="helper">You’ll soon be able to:</p>
 
       <ul className="helper-list">
-        <li>Share it via a clean URL</li>
-        <li>Your Public Profile View Is still underway.....</li>
+        <li>Change password</li>
+        <li>Update themes</li>
+        <li>Replace your resume with your ProfileHub</li>
       </ul>
 
-      <p className="helper helper--muted">Thanks for being early 🙌</p>
+      <p className="helper helper--muted">Thanks for being early 🙌 </p>
+      <p className="helper helper--muted">
+        <a className="helper helper--muted"
+          href={`mailto:subbusubramanyam92@gmail.com?subject=Profile Hub suggestion&body=Page: /profile/edit%0A%0ASuggestion:`}
+        >
+          Provide suggestion at Send it to us
+        </a>
+      </p>
       <button
         className="button button-primary"
         onClick={() => {

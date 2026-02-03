@@ -31,7 +31,7 @@ const Login = ({ onSuccess }) => {
           <label className="label">Username</label>
           <input
             className="input"
-            value={username}
+            placeholder={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -41,7 +41,7 @@ const Login = ({ onSuccess }) => {
           <input
             className="input"
             type="password"
-            value={password}
+            placeholder={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <div className="helper">At least 8 characters</div>
