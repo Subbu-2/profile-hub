@@ -4,7 +4,7 @@
   gap: 32px;
 }
 
-.ph-profileEdit__right_sidebar {
+.ph-profileEdit__left_sidebar {
   flex: 1;
   padding-top: 90px;
   width: 320px;
@@ -79,4 +79,25 @@
 
 .ph-profileEdit__emptyText {
   color: var(--muted);
+}
+
+/* ✅ Mobile: stack */
+@media (max-width: 900px) {
+  .ph-profileEdit {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ph-profileEdit__left_sidebar,
+  .ph-profileEdit__main,
+  .ph-profileEdit__right_sidebar {
+    width: 100%;
+    flex: 0 0 auto;
+    padding-top: 0; /* optional: usually looks better on mobile */
+  }
+
+  /* Optional: choose stacking order */
+  .ph-profileEdit__left_sidebar { order: 1; }
+  .ph-profileEdit__main { order: 2; }
+  .ph-profileEdit__right_sidebar { order: 3; }
 }

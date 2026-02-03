@@ -985,7 +985,7 @@ export default function ProfileEditPage() {
 
   return (
     <div className="ph-profileEdit">
-      <aside className="ph-profileEdit__right_sidebar">
+      <aside className="ph-profileEdit__left_sidebar">
         <PublicPageLinkCard />
       </aside>
       <div className="ph-profileEdit__main">
@@ -1238,7 +1238,7 @@ export default function ProfileEditPage() {
       <aside className="ph-profileEdit__right_sidebar">
         <Card
           title="Suggestion"
-          subtitle="Please provide your Suggestion here to make it better for you"
+          subtitle="Coming Soon.."
         />
       </aside>
       <ExperienceModal

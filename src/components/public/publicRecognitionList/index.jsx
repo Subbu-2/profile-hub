@@ -7,7 +7,7 @@ export default function PublicRecognitionList({ items }) {
   return (
     <div className="ph-recList">
       {items.map((r, idx) => (
-        <div key={r.id || `${r.company}-${idx}`} className="ph-recList__item">
+        <div key={r.id || `${r.company}-${idx}`} className="ph-rec__item">
           <div className="ph-recList__top">
             <div className="ph-recList__company">{r.company}</div>
           </div>
